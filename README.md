@@ -155,8 +155,7 @@ El análisis emplea un pipeline de **3 técnicas complementarias de NLP**:
 ├── notebooks/
 │   ├── EDA.ipynb                      # Análisis exploratorio de datos
 │   ├── LDA_analyze_trending_queries.ipynb  # Prototipo LDA
-│   ├── LDA_text.ipynb                 # Experimentación con textos
-│   └── challenge_2.ipynb              # Challenge complementario
+│   └── LDA_text.ipynb                 # Experimentación con textos
 └── src/
     ├── auxiliar_functions.py           # Funciones auxiliares (parsing, lang detect)
     └── LDA_for ai_convs_analysis.py   # 🎯 Pipeline principal (LDA + NER + Cross)
