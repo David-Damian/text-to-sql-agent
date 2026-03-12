@@ -1,0 +1,35 @@
+# ========================
+# Data & Documents
+# ========================
+data/
+*.pdf
+*.json
+*.csv
+*.parquet
+
+# ========================
+# OS / IDE
+# ========================
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# ========================
+# Python
+# ========================
+*.egg-info/
+dist/
+build/
+*.egg
+.env
+venv/
+env/
+
+# ========================
+# Secrets (NEVER commit API keys)
+# ========================
+.env
+*.key
