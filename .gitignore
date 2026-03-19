@@ -7,6 +7,10 @@ data/
 *.csv
 *.parquet
 
+# Specific ignores per request
+*sql_dataset_bourbaki.json
+*NLP Avanzado_ Reto V (1).pdf
+
 # ========================
 # OS / IDE
 # ========================
