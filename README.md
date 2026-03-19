@@ -123,9 +123,3 @@ export OPENAI_API_KEY="your-api-key-here"
    ```
 
 ---
-
-## 🔐 Data Privacy & Security
-
-To uphold technical rigor and repository best-practices:
-- **No Data Leakage:** Raw backend data like `sql_dataset_bourbaki.json` and challenge instructions like the `NLP Avanzado_ Reto V (1).pdf` are kept fully local and are excluded from version control.
-- **No Secrets Leaked:** Environment configurations and API Keys are never pushed to the remote repository.
