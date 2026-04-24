@@ -1,0 +1,55 @@
+[
+  {
+    "query": "¿Cuántos empleados son estrellas en ascenso (Rising Stars)?",
+    "answer": "De acuerdo con el glosario de la empresa, un **Rising Star** se define como un empleado con `YearsAtCompany <= 2`, `PerformanceRating = 4` y `Attrition = 'No'`.\n\nEl resultado de la consulta SQL indica que hay **2 empleados** que cumplen estos criterios.\n\n| count_star() |\n|-------------:|\n|            2 |",
+    "steps": [
+      "1. Consultar el esquema de la tabla 'empleados' para identificar las columnas relevantes.",
+      "2. Aplicar la definición del glosario de Rising Star: YearsAtCompany <= 2 AND PerformanceRating = 4 AND Attrition = 'No'.",
+      "3. Ejecutar la consulta SQL: SELECT COUNT(*) FROM empleados WHERE YearsAtCompany <= 2 AND PerformanceRating = 4 AND Attrition = 'No';",
+      "4. Presentar el resultado al usuario."
+    ],
+    "reward": 1.0
+  },
+  {
+    "query": "¿Quiénes son los empleados en riesgo de fuga (Flight Risk)?",
+    "answer": "Según el glosario de la empresa, un **Flight Risk** se define como un empleado con `PerformanceRating = 4`, `MonthlyIncome < 5000` y `TrainingTimesLastYear = 0`.\n\nLa consulta SQL devolvió los siguientes empleados que cumplen estos criterios:\n\n| EmployeeNumber | Department       | JobRole                 | MonthlyIncome | PerformanceRating | TrainingTimesLastYear |\n|---------------:|:-----------------|:------------------------|-------------:|------------------:|---------------------:|\n|            131 | Research & Dev   | Laboratory Technician   |         2342 |                 4 |                    0 |\n|            653 | Sales            | Sales Representative    |         2940 |                 4 |                    0 |\n|           1034 | Research & Dev   | Research Scientist      |         3560 |                 4 |                    0 |",
+    "steps": [
+      "1. Consultar el esquema de la tabla 'empleados' para identificar columnas relevantes.",
+      "2. Aplicar la definición del glosario Flight Risk: PerformanceRating = 4 AND MonthlyIncome < 5000 AND TrainingTimesLastYear = 0.",
+      "3. Ejecutar: SELECT EmployeeNumber, Department, JobRole, MonthlyIncome, PerformanceRating, TrainingTimesLastYear FROM empleados WHERE PerformanceRating = 4 AND MonthlyIncome < 5000 AND TrainingTimesLastYear = 0;",
+      "4. Presentar la tabla con los empleados en riesgo de fuga."
+    ],
+    "reward": 1.0
+  },
+  {
+    "query": "¿Cuántos empleados tienen un rol estancado (Stagnant Role)?",
+    "answer": "Según el glosario de la empresa, un **Stagnant Role** se define como un empleado con `YearsInCurrentRole > 5` y `YearsSinceLastPromotion > 5`.\n\nLa consulta SQL indica que hay **28 empleados** con un rol estancado.\n\n| count_star() |\n|-------------:|\n|           28 |",
+    "steps": [
+      "1. Consultar el esquema de la tabla 'empleados'.",
+      "2. Aplicar la definición del glosario Stagnant Role: YearsInCurrentRole > 5 AND YearsSinceLastPromotion > 5.",
+      "3. Ejecutar: SELECT COUNT(*) FROM empleados WHERE YearsInCurrentRole > 5 AND YearsSinceLastPromotion > 5;",
+      "4. Presentar el resultado."
+    ],
+    "reward": 1.0
+  },
+  {
+    "query": "¿Cuál es el salario mensual promedio por departamento?",
+    "answer": "El salario mensual promedio por departamento es el siguiente:\n\n| Department            |   AvgMonthlyIncome |\n|:----------------------|-------------------:|\n| Human Resources       |             6654.5 |\n| Research & Development|             6281.3 |\n| Sales                 |             6959.2 |",
+    "steps": [
+      "1. Consultar el esquema de la tabla 'empleados' para identificar las columnas Department y MonthlyIncome.",
+      "2. Ejecutar: SELECT Department, ROUND(AVG(MonthlyIncome), 1) AS AvgMonthlyIncome FROM empleados GROUP BY Department ORDER BY Department;",
+      "3. Presentar la tabla con los promedios por departamento."
+    ],
+    "reward": 1.0
+  },
+  {
+    "query": "¿Cuántos empleados han dejado la empresa (Attrition = 'Yes') agrupados por nivel de educación?",
+    "answer": "Los empleados que dejaron la empresa (Attrition = 'Yes'), agrupados por nivel de educación, son:\n\n| Education | Attrition_Count |\n|----------:|----------------:|\n|         1 |              44 |\n|         2 |              44 |\n|         3 |              99 |\n|         4 |              43 |\n|         5 |               7 |",
+    "steps": [
+      "1. Consultar el esquema de la tabla 'empleados' para verificar las columnas Education y Attrition.",
+      "2. Ejecutar: SELECT Education, COUNT(*) AS Attrition_Count FROM empleados WHERE Attrition = 'Yes' GROUP BY Education ORDER BY Education;",
+      "3. Presentar los resultados agrupados."
+    ],
+    "reward": 1.0
+  }
+]
