@@ -1,0 +1,12 @@
+streamlit
+langchain-openai
+langchain-community
+langgraph
+faiss-cpu
+openai
+duckdb
+pydantic
+torch
+torchview
+pandas
+tabulate
