@@ -118,7 +118,7 @@ st.markdown("""
 
 
 # ── Load cached demos ────────────────────────────────────────
-DEMOS_PATH = os.path.join(os.path.dirname(__file__), "cached_demos", "demos.json")
+DEMOS_PATH = os.path.join(os.path.dirname(__file__), "..", "cached_demos", "demos.json")
 
 @st.cache_data
 def load_demos():
